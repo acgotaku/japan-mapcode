@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Map Doge Extension",
+    "description": "Application Name."
+  },
+  "appShortName": {
+    "message": "Map Doge Extension",
+    "description": "Application Short Name"
+  },
+  "description": {
+    "message": "An extension for query MAPCODE.",
+    "description": "Application description."
+  }
+}

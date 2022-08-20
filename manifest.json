@@ -1,6 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "CRXJS React Vite Example",
-  "version": "1.0.0",
-  "action": { "default_popup": "index.html" }
+  "default_locale": "en",
+  "name": "__MSG_appName__",
+  "description": "__MSG_description__",
+  "action": {
+    "default_title": "__MSG_appName__",
+    "default_popup": "index.html"
+  },
+  "permissions": ["activeTab", "tabs"],
+  "host_permissions": ["https://www.google.com/maps/*"],
+  "version": "1.0.0"
 }

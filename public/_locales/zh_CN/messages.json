@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Map Doge 应用扩展",
+    "description": "Application Name."
+  },
+  "appShortName": {
+    "message": "Map Doge 应用扩展",
+    "description": "Application Short Name"
+  },
+  "description": {
+    "message": "用于查询MAPCODE的扩展程序",
+    "description": "Application description."
+  }
+}
