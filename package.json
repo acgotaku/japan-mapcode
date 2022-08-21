@@ -16,6 +16,8 @@
     "ress": "^5.0.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@crxjs/vite-plugin": "^1.0.14",
     "@types/chrome": "^0.0.195",
     "@types/node": "^18.7.6",
@@ -27,6 +29,8 @@
     "eslint": "^8.22.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "typescript": "^4.6.4",
     "vite": "^2.9.15"
