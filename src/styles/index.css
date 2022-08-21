@@ -17,11 +17,11 @@ body {
 
 html,
 body {
-  height: 100%;
   scroll-behavior: smooth;
 }
 
 #root {
-  height: 100%;
+  min-width: 320px;
+  min-height: 240px;
   touch-action: manipulation;
 }
