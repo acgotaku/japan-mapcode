@@ -1,5 +1,17 @@
 :root {
-  --color-text: #262626;
+  --color-standard: #fff;
+  --color-standard-text: #262626;
+  --color-standard-border: #cdcdcd;
+  --color-standard-hover: #f3f2f1;
+  --color-primary: #0078d4;
+  --color-primary-text: #fff;
+  --color-primary-hover: #106ebe;
+  --color-danger: #dc3545;
+  --color-danger-text: var(--color-standard-text);
+  --color-danger-hover: #bb2d3b;
+  --color-disabled: #f5f5f5;
+  --color-disabled-text: #bfbfbf;
+  --color-text: var(--color-standard-text);
   --font-size-xs: 0.75rem; /* 12px */
   --font-size-sm: 0.875rem; /* 14px */
   --font-size-md: 1rem; /* 16px */
