@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react';
-import { Button } from '@/components';
+import { Button, Input } from '@/components';
 import styles from './mapdoge.module.css';
 
 const MapDoge = () => {
@@ -18,6 +18,7 @@ const MapDoge = () => {
     <div className={styles.doge}>
       Map doge
       <Button>hello button</Button>
+      <Input />
     </div>
   );
 };
