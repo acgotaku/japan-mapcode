@@ -1,3 +1,17 @@
 .doge {
   padding: 16px;
 }
+
+.form {
+  display: block;
+
+  &Item {
+    margin-bottom: 8px;
+    font-size: var(--font-size-sm);
+  }
+}
+
+.label {
+  display: flex;
+  padding: 4px 0;
+}

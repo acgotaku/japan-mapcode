@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, useRef } from 'react';
 import { Button, Input } from '@/components';
 import { httpSend } from '@/utils/http';
 import { useTranslation } from '@/hooks/useTranslation';
 import styles from './mapdoge.module.css';
 
 const MapDoge = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [lat, setLat] = useState('');
   const [lng, setLng] = useState('');
   const [mapcode, setMapcode] = useState('');
@@ -16,14 +17,16 @@ const MapDoge = () => {
   }, []);
 
   const queryMapCode = useCallback(async () => {
-    const result = await httpSend('https://japanmapcode.com/mapcode', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
-      },
-      body: `lat=${lat}&lng=${lng}`
-    });
-    setMapcode(result.mapcode);
+    if (formRef.current?.reportValidity()) {
+      const result = await httpSend('https://japanmapcode.com/mapcode', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        },
+        body: `lat=${lat}&lng=${lng}`
+      });
+      setMapcode(result.mapcode);
+    }
   }, [lat, lng]);
 
   useEffect(() => {
@@ -43,10 +46,19 @@ const MapDoge = () => {
   return (
     <div className={styles.doge}>
       {t('appShortName')}
-      <form>
-        <div>
-          <label>lat</label>
+      <form
+        target="_blank"
+        action="https://www.drivenippon.com/mapcode/app/dn/navicon_start.php"
+        method="POST"
+        ref={formRef}
+        className={styles.form}
+      >
+        <div className={styles.formItem}>
+          <label htmlFor="lat" className={styles.label}>
+            lat
+          </label>
           <Input
+            id="lat"
             name="lat"
             required
             pattern="[0-9.]+"
@@ -54,9 +66,12 @@ const MapDoge = () => {
             value={lat}
           />
         </div>
-        <div>
-          <label>lng</label>
+        <div className={styles.formItem}>
+          <label htmlFor="lng" className={styles.label}>
+            lng
+          </label>
           <Input
+            id="lng"
             name="lng"
             required
             pattern="[0-9.]+"
@@ -64,10 +79,11 @@ const MapDoge = () => {
             value={lng}
           />
         </div>
-        <div>
-          <Button type="submit" onClick={queryMapCode}>
-            submit
+        <div className={styles.formItem}>
+          <Button type="button" onClick={queryMapCode}>
+            Get MAPCODE
           </Button>
+          <button type="submit">View on drivenippon</button>
         </div>
       </form>
       {mapcode && <p>{mapcode}</p>}
