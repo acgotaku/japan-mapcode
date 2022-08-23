@@ -15,3 +15,17 @@
   display: flex;
   padding: 4px 0;
 }
+
+.submit {
+  color: var(--color-link);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

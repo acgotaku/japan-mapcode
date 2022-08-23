@@ -29,6 +29,10 @@ const MapDoge = () => {
     }
   }, [lat, lng]);
 
+  const copyMapCode = useCallback(() => {
+    navigator.clipboard.writeText(mapcode);
+  }, [mapcode]);
+
   useEffect(() => {
     getCurrentTab().then(tab => {
       if (tab && tab.url?.startsWith('https://www.google.com/maps')) {
@@ -83,10 +87,23 @@ const MapDoge = () => {
           <Button type="button" onClick={queryMapCode}>
             Get MAPCODE
           </Button>
-          <button type="submit">View on drivenippon</button>
+        </div>
+        <div className={styles.formItem}>
+          <input
+            type="submit"
+            value="View on drivenippon"
+            className={styles.submit}
+          ></input>
         </div>
       </form>
-      {mapcode && <p>{mapcode}</p>}
+      {mapcode && (
+        <div className={styles.info}>
+          <p>{mapcode}</p>
+          <Button type="button" onClick={copyMapCode}>
+            Copy
+          </Button>
+        </div>
+      )}
     </div>
   );
 };
