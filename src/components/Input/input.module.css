@@ -20,10 +20,14 @@
     cursor: not-allowed;
   }
 
-  &:not([disabled]):hover,
-  &:not([disabled]):focus {
+  &:not([disabled], [invalid]):hover,
+  &:not([disabled], [invalid]):focus {
     border: 1px solid var(--color-primary);
     outline: none;
+  }
+
+  &:not(:focus):not(:placeholder-shown):invalid {
+    border: 1px solid var(--color-danger);
   }
 
   &:read-only {

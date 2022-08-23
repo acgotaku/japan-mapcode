@@ -46,14 +46,26 @@ const MapDoge = () => {
       <form>
         <div>
           <label>lat</label>
-          <Input name="lat" value={lat} />
+          <Input
+            name="lat"
+            required
+            pattern="[0-9.]+"
+            placeholder=" "
+            value={lat}
+          />
         </div>
         <div>
           <label>lng</label>
-          <Input name="lng" value={lng} />
+          <Input
+            name="lng"
+            required
+            pattern="[0-9.]+"
+            placeholder=" "
+            value={lng}
+          />
         </div>
         <div>
-          <Button type="button" onClick={queryMapCode}>
+          <Button type="submit" onClick={queryMapCode}>
             submit
           </Button>
         </div>
