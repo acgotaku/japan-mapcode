@@ -10,5 +10,13 @@
   "description": {
     "message": "An extension for query MAPCODE.",
     "description": "Application description."
+  },
+  "latitude": {
+    "message": "Latitude",
+    "description": "Latitude"
+  },
+  "longitude": {
+    "message": "Longitude",
+    "description": "Longitude"
   }
 }

@@ -10,5 +10,13 @@
   "description": {
     "message": "用于查询MAPCODE的扩展程序",
     "description": "Application description."
+  },
+  "latitude": {
+    "message": "纬度",
+    "description": "Latitude"
+  },
+  "longitude": {
+    "message": "经度",
+    "description": "Longitude"
   }
 }

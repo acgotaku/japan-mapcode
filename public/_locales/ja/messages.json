@@ -10,5 +10,13 @@
   "description": {
     "message": "マップコードを表示するの拡張機能",
     "description": "Application description."
+  },
+  "latitude": {
+    "message": "緯度",
+    "description": "Latitude"
+  },
+  "longitude": {
+    "message": "経度",
+    "description": "Longitude"
   }
 }

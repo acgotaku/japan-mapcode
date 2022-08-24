@@ -79,7 +79,7 @@ const MapDoge = () => {
       >
         <div className={styles.formItem}>
           <label htmlFor="lat" className={styles.label}>
-            lat
+            {t('latitude')}
           </label>
           <Input
             id="lat"
@@ -92,7 +92,7 @@ const MapDoge = () => {
         </div>
         <div className={styles.formItem}>
           <label htmlFor="lng" className={styles.label}>
-            lng
+            {t('longitude')}
           </label>
           <Input
             id="lng"
