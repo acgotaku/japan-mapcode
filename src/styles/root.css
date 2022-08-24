@@ -13,10 +13,14 @@
   --color-disabled-text: #bfbfbf;
   --color-link: var(--color-primary);
   --color-text: var(--color-standard-text);
+  --color-shadow: rgba(0, 0, 0, 0.15);
+  --color-success: #388a34;
+  --color-warning: #ddb100;
   --font-size-xs: 0.75rem; /* 12px */
   --font-size-sm: 0.875rem; /* 14px */
   --font-size-md: 1rem; /* 16px */
   --font-size-lg: 1.25rem; /* 20px */
   --font-size-xl: 1.5rem; /* 24px */
   --font-size-2xl: 2.5rem; /* 40px */
+  --z-index-message: 1000;
 }

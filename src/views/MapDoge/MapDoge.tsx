@@ -93,7 +93,7 @@ const MapDoge = () => {
             type="submit"
             value="View on drivenippon"
             className={styles.submit}
-          ></input>
+          />
         </div>
       </form>
       {mapcode && (

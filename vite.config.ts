@@ -17,6 +17,10 @@ export default defineConfig(async ({ mode }) => {
       }
     },
     plugins: [react(), svgr(), crx({ manifest })],
+    // https://github.com/vitejs/vite/issues/8644
+    esbuild: {
+      logOverride: { 'this-is-undefined-in-esm': 'silent' }
+    },
     build: {
       sourcemap: mode === 'production' ? 'hidden' : true,
       emptyOutDir: true
