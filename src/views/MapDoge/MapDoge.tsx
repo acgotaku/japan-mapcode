@@ -1,13 +1,24 @@
 import { useCallback, useEffect, useState, useRef } from 'react';
-import { Button, Input } from '@/components';
+import { Button, Input, message } from '@/components';
 import { httpSend } from '@/utils/http';
 import { useTranslation } from '@/hooks/useTranslation';
 import styles from './mapdoge.module.css';
+
+interface MapCodeResponse {
+  success: boolean;
+  mapcode: string;
+}
+
+interface ErrorResponse {
+  status: number;
+  message: string;
+}
 
 const MapDoge = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [lat, setLat] = useState('');
   const [lng, setLng] = useState('');
+  const [loading, setLoading] = useState(false);
   const [mapcode, setMapcode] = useState('');
   const t = useTranslation();
   const getCurrentTab = useCallback(async () => {
@@ -18,19 +29,28 @@ const MapDoge = () => {
 
   const queryMapCode = useCallback(async () => {
     if (formRef.current?.reportValidity()) {
-      const result = await httpSend('https://japanmapcode.com/mapcode', {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        },
-        body: `lat=${lat}&lng=${lng}`
-      });
-      setMapcode(result.mapcode);
+      try {
+        setLoading(true);
+        const result = (await httpSend('https://japanmapcode.com/mapcode', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+          },
+          body: `lat=${lat}&lng=${lng}`
+        })) as MapCodeResponse;
+        setMapcode(result.mapcode);
+      } catch (err) {
+        const error = err as ErrorResponse;
+        message.error(error.message);
+      } finally {
+        setLoading(false);
+      }
     }
   }, [lat, lng]);
 
   const copyMapCode = useCallback(() => {
     navigator.clipboard.writeText(mapcode);
+    message.success('Copied!');
   }, [mapcode]);
 
   useEffect(() => {
@@ -84,7 +104,7 @@ const MapDoge = () => {
           />
         </div>
         <div className={styles.formItem}>
-          <Button type="button" onClick={queryMapCode}>
+          <Button type="button" loading={loading} onClick={queryMapCode}>
             Get MAPCODE
           </Button>
         </div>

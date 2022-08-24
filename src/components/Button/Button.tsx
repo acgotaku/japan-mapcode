@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import cls from 'clsx';
 import styles from './button.module.css';
 import { IButtonProps } from './Button.types';
-import { ReactComponent as Loading } from '@/assets/icons/circle-notch.svg';
+import { ReactComponent as Loading } from '@/assets/icons/loading.svg';
 
 const Button = forwardRef<HTMLButtonElement, IButtonProps>(
   (
