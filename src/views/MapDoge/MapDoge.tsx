@@ -94,6 +94,7 @@ const MapDoge = () => {
             pattern="[0-9.]+"
             placeholder=" "
             value={lat}
+            onChange={e => setLat(e.target.value)}
             className={styles.input}
           />
         </div>
@@ -108,6 +109,7 @@ const MapDoge = () => {
             pattern="[0-9.]+"
             placeholder=" "
             value={lng}
+            onChange={e => setLng(e.target.value)}
             className={styles.input}
           />
         </div>
