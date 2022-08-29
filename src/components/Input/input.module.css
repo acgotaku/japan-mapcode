@@ -8,7 +8,7 @@
   height: 40px;
   padding: 0 8px;
   color: var(--color-standard-text);
-  border-radius: 2px;
+  border-radius: 4px;
   border: 1px solid var(--color-standard-border);
   font-size: var(--font-size-md);
   background-color: var(--color-standard);
@@ -21,8 +21,8 @@
     cursor: not-allowed;
   }
 
-  &:not([disabled], [invalid]):hover,
-  &:not([disabled], [invalid]):focus {
+  &:not([disabled], [invalid], [readonly]):hover,
+  &:not([disabled], [invalid], [readonly]):focus {
     border: 1px solid var(--color-primary);
     outline: none;
   }

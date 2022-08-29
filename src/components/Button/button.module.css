@@ -4,8 +4,8 @@
   justify-content: center;
   white-space: nowrap;
   height: 40px;
-  min-width: 112px;
-  border-radius: 2px;
+  min-width: 80px;
+  border-radius: 4px;
   padding: 0 16px;
 
   &:focus-visible {

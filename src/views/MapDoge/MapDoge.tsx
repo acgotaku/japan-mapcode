@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState, useRef } from 'react';
 import { Button, Input, message } from '@/components';
 import { httpSend } from '@/utils/http';
 import { useTranslation } from '@/hooks/useTranslation';
+import { ReactComponent as Copy } from '@/assets/icons/copy.svg';
 import styles from './mapdoge.module.css';
 
 interface MapCodeResponse {
@@ -71,6 +72,7 @@ const MapDoge = () => {
     <div className={styles.doge}>
       <h1 className={styles.title}> {t('appShortName')}</h1>
       <form
+        id="mapcode"
         target="_blank"
         action="https://www.drivenippon.com/mapcode/app/dn/navicon_start.php"
         method="POST"
@@ -88,6 +90,7 @@ const MapDoge = () => {
             pattern="[0-9.]+"
             placeholder=" "
             value={lat}
+            className={styles.input}
           />
         </div>
         <div className={styles.formItem}>
@@ -101,29 +104,37 @@ const MapDoge = () => {
             pattern="[0-9.]+"
             placeholder=" "
             value={lng}
+            className={styles.input}
           />
         </div>
         <div className={styles.formItem}>
-          <Button type="button" loading={loading} onClick={queryMapCode}>
-            Get MAPCODE
+          <Button
+            type="button"
+            color="primary"
+            loading={loading}
+            onClick={queryMapCode}
+          >
+            Get
           </Button>
-        </div>
-        <div className={styles.formItem}>
-          <input
-            type="submit"
-            value="View on drivenippon"
-            className={styles.submit}
-          />
         </div>
       </form>
-      {mapcode && (
+      <div className={styles.mapcode}>
         <div className={styles.info}>
-          <p>{mapcode}</p>
-          <Button type="button" onClick={copyMapCode}>
-            Copy
-          </Button>
+          <label className={styles.label}>{'MAPCODE'}</label>
+          <Input readOnly value={mapcode} className={styles.input} />
         </div>
-      )}
+        <button type="button" onClick={copyMapCode} className={styles.copy}>
+          <Copy className={styles.icon} />
+        </button>
+      </div>
+      <div className={styles.drivenippon}>
+        <input
+          type="submit"
+          value="View on drivenippon"
+          form="mapcode"
+          className={styles.submit}
+        />
+      </div>
     </div>
   );
 };
