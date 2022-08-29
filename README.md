@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="180" src="./public/mapdoge.svg" alt="Map Doge logo">
+</p>
+
 # japan-mapcode
 
 ## Development Environment
