@@ -21,6 +21,16 @@ Open `chrome://extensions/`, enable `Developer mode`. Click `Load unpacked` butt
 pnpm build
 ```
 
+## Usage
+
+Open [Google Maps](https://www.google.com/maps), select any palace and confirm URL contains GPS info `@xx.xxx,yy.yyyyy,15z`.
+
+Click the extension icon, we will fill the GPS info. Of course you can input GPS info manually.
+
+Click `Get` button you will get the MAPCODE.
+
+**Only Japan GPS info is valid.**
+
 ## Icons
 
 [Phosphor Icons](https://phosphoricons.com/)
