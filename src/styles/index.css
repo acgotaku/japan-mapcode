@@ -13,6 +13,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-body);
 }
 
 html,
@@ -21,7 +22,5 @@ body {
 }
 
 #root {
-  min-width: 320px;
-  min-height: 240px;
   touch-action: manipulation;
 }

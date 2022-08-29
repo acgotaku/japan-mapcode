@@ -1,5 +1,11 @@
 .doge {
+  width: 320px;
+  margin: 0 auto;
   padding: 16px;
+}
+
+.title {
+  text-align: center;
 }
 
 .form {

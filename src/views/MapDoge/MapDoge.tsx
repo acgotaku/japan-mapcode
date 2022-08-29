@@ -69,7 +69,7 @@ const MapDoge = () => {
   }, [getCurrentTab]);
   return (
     <div className={styles.doge}>
-      {t('appShortName')}
+      <h1 className={styles.title}> {t('appShortName')}</h1>
       <form
         target="_blank"
         action="https://www.drivenippon.com/mapcode/app/dn/navicon_start.php"
