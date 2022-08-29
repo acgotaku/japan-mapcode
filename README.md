@@ -1,5 +1,7 @@
 <p align="center">
-  <img width="180" src="./public/mapdoge.svg" alt="Map Doge logo">
+  <a href="https://github.com/acgotaku/japan-mapcode" target="_blank" rel="noopener noreferrer">
+    <img width="180" src="./public/mapdoge.svg" alt="Map Doge logo">
+  </a>
 </p>
 
 # japan-mapcode
