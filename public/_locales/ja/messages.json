@@ -18,5 +18,13 @@
   "longitude": {
     "message": "経度",
     "description": "Longitude"
+  },
+  "drivenippon": {
+    "message": "drivenipponで見る",
+    "description": "View on drivenippon"
+  },
+  "copied": {
+    "message": "コピーしました",
+    "description": "Copied"
   }
 }

@@ -18,5 +18,13 @@
   "longitude": {
     "message": "经度",
     "description": "Longitude"
+  },
+  "drivenippon": {
+    "message": "在drivenippon上查看",
+    "description": "View on drivenippon"
+  },
+  "copied": {
+    "message": "已复制！",
+    "description": "Copied"
   }
 }

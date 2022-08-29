@@ -13,6 +13,10 @@ interface MapCodeResponse {
 interface ErrorResponse {
   status: number;
   message: string;
+  error: {
+    code: string;
+    message: string;
+  };
 }
 
 const MapDoge = () => {
@@ -42,7 +46,7 @@ const MapDoge = () => {
         setMapcode(result.mapcode);
       } catch (err) {
         const error = err as ErrorResponse;
-        message.error(error.message);
+        message.error(error.message || error.error.message || 'Unknown error');
       } finally {
         setLoading(false);
       }
@@ -51,8 +55,8 @@ const MapDoge = () => {
 
   const copyMapCode = useCallback(() => {
     navigator.clipboard.writeText(mapcode);
-    message.success('Copied!');
-  }, [mapcode]);
+    message.success(t('copied'));
+  }, [mapcode, t]);
 
   useEffect(() => {
     getCurrentTab().then(tab => {
@@ -123,14 +127,19 @@ const MapDoge = () => {
           <label className={styles.label}>{'MAPCODE'}</label>
           <Input readOnly value={mapcode} className={styles.input} />
         </div>
-        <button type="button" onClick={copyMapCode} className={styles.copy}>
+        <button
+          type="button"
+          disabled={!mapcode}
+          onClick={copyMapCode}
+          className={styles.copy}
+        >
           <Copy className={styles.icon} />
         </button>
       </div>
       <div className={styles.drivenippon}>
         <input
           type="submit"
-          value="View on drivenippon"
+          value={t('drivenippon')}
           form="mapcode"
           className={styles.submit}
         />

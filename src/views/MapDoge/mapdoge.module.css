@@ -47,17 +47,22 @@
   justify-content: center;
   border-radius: 4px;
   border: 1px solid transparent;
+  color: var(--color-primary);
 
-  &:hover,
-  &:focus {
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
     border: 1px solid var(--color-primary);
+  }
+
+  &:disabled {
+    color: var(--color-disabled-text);
+    cursor: not-allowed;
   }
 }
 
 .icon {
   width: 24px;
   height: 24px;
-  color: var(--color-primary);
 }
 
 .drivenippon {

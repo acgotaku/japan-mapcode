@@ -18,5 +18,13 @@
   "longitude": {
     "message": "Longitude",
     "description": "Longitude"
+  },
+  "drivenippon": {
+    "message": "View on drivenippon",
+    "description": "View on drivenippon"
+  },
+  "copied": {
+    "message": "Copied!",
+    "description": "Copied"
   }
 }
