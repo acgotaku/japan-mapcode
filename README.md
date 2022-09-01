@@ -37,6 +37,16 @@ Click `Get` button you will get the MAPCODE.
 
 **Only Japan GPS info is valid.**
 
+## Reference
+
+[MAPCODE](https://www.denso-solution.com/mapcode/)
+
+[Google マップでの日本マップコード検索](https://japanmapcode.com)
+
+[mapcode_search](https://www.drivenippon.com/mapcode/app/dn/mapcode_search.php)
+
+[mapcode_to_latlng](https://www.drivenippon.com/mapcode/app/dn/mapcode_to_latlng.php)
+
 ## Icons
 
 [Phosphor Icons](https://phosphoricons.com/)

@@ -8,9 +8,9 @@
     "default_popup": "index.html"
   },
   "icons": {
-    "16": "img/mapdoge16.png",
-    "48": "img/mapdoge48.png",
-    "128": "img/mapdoge128.png"
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
   },
   "permissions": ["activeTab", "tabs"],
   "host_permissions": ["https://www.google.com/maps/*"],
