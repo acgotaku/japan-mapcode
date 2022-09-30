@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# japan-mapcode
+# Map Doge Extension [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kdidcmclcbggimojjpdbloljoolkojof.svg)](https://chrome.google.com/webstore/detail/map-doge-extension/kdidcmclcbggimojjpdbloljoolkojof?hl=en)
 
 ## Development Environment
 
