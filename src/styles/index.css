@@ -1,7 +1,7 @@
 @import 'ress';
 @import './root.css';
 
-html {
+body {
   color: var(--color-text);
   font-size: 16px;
   line-height: 1.5;
